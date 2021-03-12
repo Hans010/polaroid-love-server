@@ -18,12 +18,12 @@ Create an `.env` file and add the connection url.\
 
 ## Installation
 
-######Install dependencies
+Install dependencies
 ```sh
 npm install
 ```
 
-######Start Client
+Start Client
 ```sh
 npm start
 ```
