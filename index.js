@@ -18,7 +18,7 @@ app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
 app.get('/', (req, res) => {
-    res.send(`Hello from Polaroid Server 1 ${process.env.PORT}`);
+    res.send('Hello from Polaroid Server 1');
 });
 
 const PORT = process.env.PORT || 5000;
