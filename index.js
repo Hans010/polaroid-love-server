@@ -17,10 +17,9 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
-const hi = process.env.CONNECTION_URL || 'no url here man';
 
 app.get('/', (req, res) => {
-    res.send(hi)
+    res.send('Hey from polaroid server')
 });
 
 const PORT = process.env.PORT || 5000;
