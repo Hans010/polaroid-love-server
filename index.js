@@ -17,15 +17,21 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
+const hi = process.env.CONNECTION_URL || 'no url here man';
+
 app.get('/', (req, res) => {
-    res.send('Hello from Polaroid Server 1');
+    res.send(<div>
+            <p>'Hello from Polaroid Server 1'</p>
+        {hi}
+        </div>
+    );
 });
 
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
-    .catch(err => console.log(err));
-
-mongoose.set('useFindAndModify', false);
+// mongoose.connect(process.env.CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
+//     .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
+//     .catch(err => console.log(err));
+//
+// mongoose.set('useFindAndModify', false);
 
