@@ -12,7 +12,7 @@ export const signIn = async (req, res) => {
     try {
         // check if user exists in database
         const existingUser = await User.findOne({email});
-        if (!existingUser) return res.status(404).json({message: "User doesnt exist"});
+        if (!existingUser) return res.status(400).json({message: "Invalid credentials"});
 
         // check if password match
         const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
